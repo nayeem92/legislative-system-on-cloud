@@ -56,7 +56,7 @@ This project aims to provide an intuitive interface for managing legislative pro
 
 ## Installation
 
-### Docker Setup
+### Option 1: Docker Setup
 
 #### Step 1: Clone the Repository
 ```bash
@@ -89,14 +89,6 @@ cd legislative-demo
 - In the Docker environment, set `DB_HOST` to `db` in `database.php` to connect to the MySQL container.
 
 
-
-#### Step 4: Run the Application
-
-- Start XAMPP/WAMP and ensure Apache and MySQL are running.
-- Open your browser and go to [http://localhost/legislative-system/public](http://localhost/legislative-system/public) (assuming the `legislative-system` folder is in your `htdocs` directory).
-
-#### Database Configuration:
-- When using XAMPP/WAMP, set `DB_HOST` to `localhost` in `database.php`.
 
 ## User Credentials
 
