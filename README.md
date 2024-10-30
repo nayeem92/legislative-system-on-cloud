@@ -162,6 +162,48 @@ Below are the default usernames and passwords for testing the system:
 
 
 
+# Preparations Before Creating the EC2 Instance
+
+### 1. Dockerize the PHP Application
+A Dockerfile was created for the PHP application to set up the environment, including necessary PHP extensions and copying application files.
+
+### 2. Building the Docker Image
+The PHP application Docker image was built using the command:
+
+```bash
+docker build -t legislative-demo-php:latest .
+```
+### 3. Creating Docker Compose File
+A docker-compose.yml file was defined that specifies:
+
+- PHP Service: Builds from the Dockerfile.
+
+- MySQL Service: Uses the mysql:5.7 image with environment configurations.
+
+- phpMyAdmin Service: Uses the phpmyadmin/phpmyadmin image.
+
+This setup ensures that when docker-compose up is run, Docker Compose will automatically pull the required images if they are not already present on the local machine.
+
+### 4. Pulling MySQL and phpMyAdmin Images
+Instead of tagging and pushing the MySQL and phpMyAdmin images to the ECR repository, these images can be pulled directly from Docker Hub using:
+
+```bash
+docker pull mysql:5.7
+docker pull phpmyadmin/phpmyadmin
+```
+### 5. Tagging the PHP Image for ECR
+After building the PHP application image, the image was tagged to prepare it for pushing to the ECR repository:
+
+```bash
+docker tag legislative-demo-php:latest public.ecr.aws/ACCOUNT_ID/my-php-repository:latest
+```
+### 6. Pushing the PHP Image to ECR
+The tagged PHP image was pushed to the Amazon ECR repository using:
+
+```bash
+docker push public.ecr.aws/ACCOUNT_ID/my-php-repository:latest
+```
+These steps ensured that the Docker images were prepared and available in ECR for deployment on the EC2 instance.
 
 # Dockerized PHP Application Deployment on AWS EC2
 
