@@ -3,6 +3,9 @@
 
 The **Legislative System** is a web-based application designed to streamline the legislative process. The system allows different types of users — Members of Parliament (MPs), Administrators, and Reviewers — to interact with bills, including creating, editing, voting, reviewing, and managing legislative data. The system includes robust features like data export and status tracking for better governance.
 
+## Project Development
+The legislative system was developed collaboratively, with my contributions focusing on cloud infrastructure, Dockerization, and deployment. View the project on [GitHub](https://github.com/nayeem92/legislative-demo).
+
 ## Project Description
 
 This project aims to provide an intuitive interface for managing legislative processes, with features that support the needs of different roles:
