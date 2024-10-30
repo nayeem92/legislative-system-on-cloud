@@ -47,6 +47,12 @@ This project aims to provide an intuitive interface for managing legislative pro
 - **JavaScript**: Used for client-side interactions.
 - **Composer**: Dependency management for PHP.
 
+## Cloud Architecture
+
+![Cloud Architecture Diagram](screenshots/arch.png)
+
+
+
 ## Prerequisites
 
 - **PHP** 8.2 or above.
