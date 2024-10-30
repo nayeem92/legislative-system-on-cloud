@@ -1,0 +1,36 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  php:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    volumes:
+      - ./public:/var/www/html  # Mount the public directory
+      - ./src:/var/www/src      # Mount the src directory
+    ports:
+      - "8080:80"                # Expose port 80 of the container to port 8080 of the host
+    depends_on:
+      - db                       # Ensure the db service starts before php
+
+  db:
+    image: mysql:5.7            # Use MySQL 5.7
+    environment:
+      MYSQL_DATABASE: legislation_system_demo  # Create a database on startup
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"       # Allow empty root password
+      MYSQL_ROOT_PASSWORD: ""                  # Define root password as empty
+    volumes:
+      - db_data:/var/lib/mysql                 # Persist MySQL data
+      - ./legislation_system_demo.sql:/docker-entrypoint-initdb.d/init.sql # Mount the legislation_system_demo.sql script
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"                            # Access phpMyAdmin at http://localhost:8081
+    environment:
+      PMA_HOST: db                            # Link to the MySQL service
+      PMA_USER: root                          # MySQL username
+      PMA_PASSWORD: ""                        # MySQL password (leave empty)
+
+volumes:
+  db_data:                                   # Define a named volume for MySQL data
