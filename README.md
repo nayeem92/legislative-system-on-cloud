@@ -76,22 +76,12 @@ cd legislative-demo
 
 - Open your browser and navigate to [http://localhost:8080](http://localhost:8080).
 
-#### Screenshot Reference
-
-![Alt Text](screenshots/d1.PNG)
-![Alt Text](screenshots/d2.PNG)
-![Alt Text](screenshots/d3.PNG)
 
 
 #### Step 3: Access phpMyAdmin
 
 - Open your browser and navigate to [http://localhost:8081](http://localhost:8081).
 
-
-#### Screenshot Reference
-
-![Alt Text](screenshots/d5.PNG)
-![Alt Text](screenshots/d6.PNG)
 
 
 
@@ -153,12 +143,6 @@ Below are the default usernames and passwords for testing the system:
   - Password: `reviewer_password`
 
 
-## Docker Desktop
-
-![Alt Text](screenshots/d10.PNG)
-![Alt Text](screenshots/d7.PNG)
-![Alt Text](screenshots/d8.PNG)
-![Alt Text](screenshots/d9.PNG)
 
 
 
